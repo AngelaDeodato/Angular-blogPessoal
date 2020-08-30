@@ -1,8 +1,23 @@
 .texto{
 letter-spacing: .2rem;
 font-size: 16pt;
+color: black;
 }
 
 a{
     cursor: pointer;
+}
+
+.logincs{
+    margin-left:600px;
+}
+
+.tdNav{
+    background-color: #deb887;
+}
+
+.hoverNav :hover{
+    color: white;
+   
+   
 }

@@ -1,0 +1,10 @@
+.hoverFeed :hover{
+    color: black;
+text-shadow: black;
+font-weight: bold;
+
+}
+
+.mFeed{
+    margin-bottom: 30px;
+}

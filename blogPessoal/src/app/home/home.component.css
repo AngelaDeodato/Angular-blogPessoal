@@ -8,3 +8,24 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .fotoHome{
+    margin-right: 20px;
+
+  }
+
+  .secHome{
+    margin-bottom: 350px;
+    margin-left: 5250px;
+  }
+
+  .btnVF{
+ margin-left: 70%;
+  }
+
+  .btnVF :hover{
+    color: black;
+text-shadow: black;
+font-weight: bold;
+}
+  
