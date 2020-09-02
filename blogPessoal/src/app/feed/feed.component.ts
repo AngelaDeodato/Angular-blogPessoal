@@ -17,6 +17,7 @@ export class FeedComponent implements OnInit {
   
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+ 
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -56,6 +57,7 @@ publicar(){
   }
 
 }
+
 
 
 findAllTemas(){

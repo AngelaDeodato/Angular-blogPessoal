@@ -13,15 +13,15 @@ token = {
 }
 
 getAllTemas(){
-  return this.http.get('http://93.188.161.223:9000/tema', this.token)
+  return this.http.get('http://localhost:8080/tema', this.token)
 }
 
 getByIdTema(id: number){
-  return this.http.get(`http://93.188.161.223:9000/tema/${id}`, this.token)
+  return this.http.get(`http://localhost:8080/tema/${id}`, this.token)
 }
 
 postTema(tema: Tema){
-  return this.http.post('http://93.188.161.223:9000/tema', this.token)
+  return this.http.post('http://localhost:8080/tema',tema, this.token)
 }
 
 }
