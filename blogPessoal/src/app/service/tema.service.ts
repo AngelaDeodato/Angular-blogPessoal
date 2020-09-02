@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Tema } from '../model/Tema';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,10 @@ getAllTemas(){
 
 getByIdTema(id: number){
   return this.http.get(`http://93.188.161.223:9000/tema/${id}`, this.token)
+}
+
+postTema(tema: Tema){
+  return this.http.post('http://93.188.161.223:9000/tema', this.token)
 }
 
 }

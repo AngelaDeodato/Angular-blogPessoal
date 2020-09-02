@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Postagem } from '../model/Postagem';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,10 @@ export class PostagemService {
 
 getAllPostagens(){
   return this.http.get('http://93.188.161.223:9000/postagens', this.token)
+}
+
+postPostagem(postagem: Postagem){
+  return this.http.post('http://93.188.161.223:9000/postagens', postagem, this.token)
 }
 
 }
