@@ -59,7 +59,7 @@
                     <div class="row mt-3 mb-3">
                         <div class="col-md-10 pr-0">
                             <input class="form-control w-80" type="search" placeholder="Pesquisar postagem"
-                                aria-label="Pesquisar">
+                                aria-label="Pesquisar" >
                         </div>
                         <div class="col-md-2 pl-0 hoverFeed">
                             <button class="btn btn-outline-dark w-100 shadow-lg  mb-5 bg-transparent rounded"
@@ -99,11 +99,11 @@
                                         </div>
 
                                         <div class="col-md-4 d-flex justify-content-end">
-                                            <button class="mr-3 btn btn-outline-info">
+                                            <button class="mr-3 btn btn-outline-info"[routerLink]="['/editar-post',item.id]">
                                                 Editar
                                             </button>
 
-                                            <button class="mr-3 btn btn-outline-danger ml-3">
+                                            <button class="mr-3 btn btn-outline-danger ml-3"[routerLink]="['/delete-post',item.id]">
                                                 apagar
                                             </button>
                                         </div>
@@ -113,7 +113,7 @@
                                 <div class="card-body">
                                     <p class="card-text" aria-describedby="texto"> {{item.texto}} </p>
                                     <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace"> Postado em:
-                                        {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}} </small>
+                                        {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
                                 </div>
 
                             </div>
