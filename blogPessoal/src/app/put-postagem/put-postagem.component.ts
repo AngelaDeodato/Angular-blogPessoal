@@ -4,6 +4,7 @@ import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
 import { PostagemService } from '../service/postagem.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-put-postagem',
@@ -22,7 +23,8 @@ export class PutPostagemComponent implements OnInit {
   constructor(private temaService: TemaService,
     private postagemService: PostagemService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alerta: AlertasService
     ) { }
 
   ngOnInit(){
@@ -40,20 +42,20 @@ findByIdPostagem(id:number){
 }
 
 
-  salvar(){
-    this.tema.id = this.idTema
-    this.postagem.tema = this.tema
+salvar(){
+  this.tema.id = this.idTema
+  this.postagem.tema = this.tema
 
-    this.postagemService.putPostagem(this.postagem).subscribe((resp:Postagem) =>{
-      this.postagem = resp
-      this.router.navigate(['/feed'])
-      alert('Postagem alterada com sucesso')
-    }, err => {
-      if(err.status === '500'){
-        alert('Preencha todos os campos corretamente antes de enviar!!!')
-      }
-    })
-  }
+  this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
+    this.postagem = resp
+    this.router.navigate(['/feed'])
+    this.alerta.showAlertSuccess('Postagem alterada com sucesso')
+  }, err => {
+    if (err.status == '500'){
+      this.alerta.showAlertDanger('Preencha todos os campos corretamente antes de enviar!')
+    }
+  })
+}
 
   findAllTemas(){
     this.temaService.getAllTemas().subscribe((resp:Tema[]) => {this.listaTemas = resp
