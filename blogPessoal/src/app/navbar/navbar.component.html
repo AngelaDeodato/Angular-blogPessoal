@@ -1,0 +1,52 @@
+<div class="container-fluid d-flex justify-content-center tdNav">
+  <nav class="navbar navbar-expand-lg ">
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item hoverNav">
+            <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3 shadow  mb-5 rounded  btn-transparent btn-outline btn-block" routerLink='/home'>Home <span class="sr-only">(página atual)</span></a>
+            
+          </li>
+          
+          <div *ngIf='auth.btnSair()'>
+            <li class="nav-item hoverNav ml-3"><!--ROUTERLINK É O MESMO QUE HREF EM ANGULAR-->
+              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3 shadow  mb-5 rounded btn-transparent btn-outline btn-block " routerLink='/feed'>Feed</a>
+            </li> 
+          </div>
+          
+         
+          <div *ngIf='auth.btnLogin()'>
+            
+            <li class="nav-item  hoverNav ml-3"><!--ROUTERLINK É O MESMO QUE HREF EM ANGULAR-->
+              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3 shadow  mb-5 rounded btn-transparent btn-outline btn-block" routerLink='/cadastro'>Cadastro</a>
+            </li>
+          </div>
+
+          <div *ngIf='auth.btnLogin()'>
+            <li class="nav-item hoverNav ml-3">
+              <nav class="navbar navbar-light ">
+                <form class="form-inline">
+                  <button class="btn btn-outline-transparent my-2 my-sm-0  texto text-monospace text-uppercase font-weight-bold bg-transparent logincs p-3 shadow  mb-5 rounded " type="submit"  routerLink='/login'>Login</button>
+                </form>
+              </nav>
+             
+            </li>
+          </div>
+
+          <div *ngIf='auth.btnSair()'>
+            <li class="nav-item hoverNav ml-3"><!--ROUTERLINK É O MESMO QUE HREF EM ANGULAR-->
+              <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3 shadow  mb-5 rounded btn-transparent btn-outline btn-block" (click)= 'sair()'>Sair</a>
+            </li>
+          </div>
+
+          
+
+        </ul>
+      </div>
+    </nav>
+  
+</div>
